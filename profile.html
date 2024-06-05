@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navigation Bar with Logo</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <a href="#home"><img src="/images/logo.png" alt="Logo" /></a>
+        <span>MyWebsite</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="/test.html">STORE</a>
+        <a href="#about">LIBRARY</a>
+        <a href="/profile.html">PROFILE</a>
+        <a href="#contact">SIGN OUT</a>
+      </div>
+      <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
