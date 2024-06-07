@@ -3,29 +3,37 @@ include 'connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // Handle profile picture upload
-    $profilePicture = 'default.jpg'; // Set the default picture
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone = $_POST['phone'];
 
-    if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
+
+    // Handle profile picture upload
+    $profilePicture = 'default.jpg'; // Set  default picture
+
+    if (isset($_FILES['profile_picture'])) {
         $file = $_FILES['profile_picture'];
-        $targetDirectory = 'profile_pictures/';
-        $newFilename = uniqid() . '_' . $file['name'];
-        $targetFile = $targetDirectory . $newFilename;
-        move_uploaded_file($file['tmp_name'], $targetFile);
-        $profilePicture = $newFilename;
+        if ($file['error'] === UPLOAD_ERR_OK) {
+            $targetDirectory = '../profile_pictures/';
+            $newFilename = $file['name'];
+            $targetFile = $targetDirectory . $newFilename;
+            move_uploaded_file($file['tmp_name'], $targetFile);
+            $profilePicture = $newFilename;
+        }
     }
 
     // Insert user data into database
-    $stmt = $connect->prepare("INSERT INTO users (first_name, last_name, email, profile_picture, password) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $firstName, $lastName, $email, $profilePicture, $hashedPassword);
+    $stmt = $connect->prepare("INSERT INTO users (first_name, last_name, email, password, profile_picture, phone) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $firstName, $lastName, $email, $password, $profilePicture, $phone);
 
     if ($stmt->execute()) {
         echo "Signup successful!";
         // Redirect the user to login or another page
-        // header('Location: login.php'); 
-        // exit;
+        header('Location: index.php');
+        exit();
     } else {
         echo "Error during signup: " . $connect->error;
     }
 }
-?>

@@ -7,7 +7,7 @@
 
 <body>
   <h2>Signup</h2>
-  <form method="POST" action="process_signup.php" enctype="multipart/form-data">
+  <form method="POST" action="signup_handler.php" enctype="multipart/form-data">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" required><br><br>
 

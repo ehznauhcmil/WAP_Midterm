@@ -37,13 +37,13 @@
       </div>
     </div>
     <div class="small-card">
-      <img src="/images/ac.jpg" alt="Small Card Image 1" class="small-card-image" />
+      <img src="../images/fallguys.jpg" alt="Small Card Image 1" class="small-card-image" />
       <div class="textbox-container">
         <input type="text" placeholder="Description" />
       </div>
     </div>
     <div class="small-card">
-      <img src="/images/gta.jpg" alt="Small Card Image 2" class="small-card-image" />
+      <img src="../images/gta.jpg" alt="Small Card Image 2" class="small-card-image" />
       <div class="textbox-container">
         <input type="text" placeholder="Description" />
       </div>
