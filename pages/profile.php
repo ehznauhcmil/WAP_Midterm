@@ -59,6 +59,16 @@ include ('connection.php');
       <button id="update-picture-button">Change Profile Picture</button>
     </div>
 
+    <div class="profile-picture-form">
+      <h2>Change Profile Picture</h2>
+      <form method="POST" action="profile_picture_update.php" enctype="multipart/form-data">
+        <label for="profile_picture">Profile Picture:</label>
+        <input type="file" id="profile_picture" name="profile_picture"><br><br>
+        <button type="submit">Save</button>
+      </form>
+
+    </div>
+
 
 
 
