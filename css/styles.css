@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  height: 1080px;
+
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.big-card,
+.small-card {
+  background-color: #5d737e;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px;
+}
+
+.big-card {
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  overflow: hidden;
+}
+
+.big-card-image {
+  width: 1000px;
+  height: auto;
+}
+
+.small-card-list {
+  padding: 0px 30px;
+  width: 50%;
+  overflow: hidden;
+}
+
+.small-card {
+  height: 200px;
+}

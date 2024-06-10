@@ -11,22 +11,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     // Handle profile picture upload
-    $profilePicture = 'default.jpg'; // Set  default picture
+    $fileName = 'default.jpg'; // Set  default picture
 
-    if (isset($_FILES['profile_picture'])) {
-        $file = $_FILES['profile_picture'];
-        if ($file['error'] === UPLOAD_ERR_OK) {
-            $targetDirectory = '../profile_pictures/';
-            $newFilename = $file['name'];
-            $targetFile = $targetDirectory . $newFilename;
-            move_uploaded_file($file['tmp_name'], $targetFile);
-            $profilePicture = $newFilename;
-        }
+    if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
+
+        $fileName = $_FILES['profile_picture']['name'];
+        $fileTmpPath = $_FILES['profile_picture']['tmp_name'];
+
+        $uploadDir = 'profile_pictures/';
+
+        move_uploaded_file($fileTmpPath, $uploadDir . $fileName);
     }
-
     // Insert user data into database
     $stmt = $connect->prepare("INSERT INTO users (first_name, last_name, email, password, profile_picture, phone) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $firstName, $lastName, $email, $password, $profilePicture, $phone);
+    $stmt->bind_param("ssssss", $firstName, $lastName, $email, $password, $fileName, $phone);
 
     if ($stmt->execute()) {
         echo "Signup successful!";

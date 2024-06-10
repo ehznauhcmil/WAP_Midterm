@@ -5,13 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Responsive Navigation Bar with Logo</title>
-  <link href="styles.css" rel="stylesheet" />
+  <link href="css/general.css" rel="stylesheet" />
+  <link href="css/navbar.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+
 </head>
 
 <body>
   <div class="navbar">
     <div class="logo">
-      <a href="#home"><img src="/images/logo.png" alt="Logo" /></a>
+      <a href="#home"><img src="images/logo.png" alt="Logo" /></a>
       <span>MyWebsite</span>
     </div>
 
@@ -30,28 +33,23 @@
 
   <div class="container">
     <div class="big-card">
-      <img src="/images/fallguys.jpg" alt="Big Card Image" class="big-card-image" />
+      <img src="images/fallguys.jpg" alt="Big Card Image" class="big-card-image" />
       <div class="button-container">
         <button>BUY NOW</button>
         <span>Get Fall Guys At RM179!!!</span>
       </div>
     </div>
-    <div class="small-card">
-      <img src="../images/fallguys.jpg" alt="Small Card Image 1" class="small-card-image" />
-      <div class="textbox-container">
-        <input type="text" placeholder="Description" />
+    <div class="small-card-list">
+      <div class="small-card">
+        <img src="images/ac.jpg" alt="Small Card Image 1" class="small-card-image" />
+
       </div>
-    </div>
-    <div class="small-card">
-      <img src="../images/gta.jpg" alt="Small Card Image 2" class="small-card-image" />
-      <div class="textbox-container">
-        <input type="text" placeholder="Description" />
+      <div class="small-card">
+        <img src="images/gta.jpg" alt="Small Card Image 2" class="small-card-image" />
+
       </div>
-    </div>
-    <div class="small-card">
-      <img src="/images/hogwarts.jpg" alt="Small Card Image 3" class="small-card-image" />
-      <div class="textbox-container">
-        <input type="text" placeholder="Description" />
+      <div class="small-card">
+        <img src="images/hogwarts.jpg" alt="Small Card Image 3" class="small-card-image" />
       </div>
     </div>
   </div>
