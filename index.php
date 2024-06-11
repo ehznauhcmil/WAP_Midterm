@@ -56,27 +56,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Log In</title>
-  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/login.css">
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 </head>
 
 <body>
 
-  <form action="index.php" method="POST">
-    <div class="container">
-      <div class="login_cont">
-        <h1>LOGIN</h1><br />
+  <div class="card" id="login-block">
+    <form action="index.php" method="POST">
+      <h1>LOGIN</h1>
+      <div class="login-form">
         <?php echo "<h2>" . $errorMessage . "</h2>" ?>
-        <input type="email" placeholder="E-mail" name="email" required autocomplete="off"><br />
-        <input type="password" maxlength="16" name="password" placeholder="Password" required autocomplete="off"><br />
-        <button>Login</button><br /><br />
-        <a href="signup.php">
-          <button type="button">Sign Up</button>
-        </a><br /><br />
-      </div>
+        <div class="form-input">
+          <input type="email" id="email" placeholder="E-mail" name="email" required autocomplete="off"><br />
+        </div>
 
-    </div>
-  </form>
+        <div class="padding"></div>
+
+        <div class="form-input">
+          <input type="password" id="password" name="password" placeholder="Password" required autocomplete="off"><br />
+        </div>
+
+        <div class="padding"></div>
+
+        <div class="button-grid">
+          <div class="login">
+            <button id="login-button">Login</button><br /><br />
+          </div>
+
+          <div class="signup">
+            <a href="signup.php">
+              <button type="button">Sign Up</button>
+            </a><br /><br />
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>

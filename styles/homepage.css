@@ -1,0 +1,148 @@
+.search-bar {
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-columns: 2fr 3fr;
+  padding: 30px 30px;
+}
+
+#search {
+  align-items: center;
+  height: auto;
+  width: auto;
+  border: solid 10px transparent;
+  border-radius: 10px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  padding-top: 5px;
+}
+
+#search-input {
+  width: auto;
+  height: auto;
+  border: none;
+  background: none;
+  outline: none;
+  offset: none;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.card {
+  height: auto;
+  width: auto;
+  border: solid 10px transparent;
+  border-radius: 10px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  transition: transform 0.4s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(195, 194, 194, 0.2); /* Optional: Add a subtle shadow */
+}
+
+.card:active {
+  /* Styles applied when the card is being clicked */
+  transform: scale(0.95); /* Shrink slightly on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a darker shadow */
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 720px;
+  gap: 30px;
+  padding: 0px 30px;
+}
+
+.main-card {
+  display: flex;
+  height: 720px;
+}
+
+#big-card {
+  max-height: 720px;
+  overflow: hidden;
+}
+
+#big-card img {
+  width: auto;
+  max-height: 750px;
+  object-fit: contain;
+  object-position: right;
+}
+
+.v-card-list-3 {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 30px;
+}
+
+#small-horizontal-card {
+  display: grid;
+  max-height: 200px;
+  grid-template-columns: 1fr 2fr;
+}
+
+.small-image {
+  height: 200px;
+  width: 150px;
+  overflow: hidden;
+}
+
+#small-horizontal-card.img {
+  max-height: auto;
+  max-width: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.small-card-text {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.small-card-text h1 {
+  font-size: 20px;
+  color: aliceblue;
+}
+
+.new-release-title {
+  color: aliceblue;
+  width: auto;
+  height: 60px;
+  padding: 30px 30px;
+}
+
+.others {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 730px;
+  gap: 30px;
+  padding: 30px 30px;
+}
+
+.h-card-list-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 30px;
+}
+
+#small-vertical-card {
+  overflow: hidden;
+}
+
+.v-small-image img {
+  max-width: 575px;
+  max-height: 690px;
+  object-fit: fill;
+}

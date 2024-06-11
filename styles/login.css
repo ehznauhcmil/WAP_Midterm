@@ -1,0 +1,89 @@
+body {
+  display: grid;
+  place-items: center;
+  align-items: center;
+  padding: 30px 30px;
+}
+
+.card {
+  height: auto;
+  width: auto;
+  border: solid 10px transparent;
+  border-radius: 10px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  padding: 15px;
+}
+
+#login-block {
+  position: center;
+
+  display: flex;
+  width: 1440px;
+  height: 780px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 30px;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+  color: aliceblue;
+}
+
+#email {
+  width: 300px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+#email::placeholder {
+  color: aliceblue;
+}
+
+#password {
+  width: 300px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+#password::placeholder {
+  color: aliceblue;
+}
+
+.form-input {
+  border: solid 5px transparent;
+  border-radius: 5px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+
+.padding {
+  height: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  color: aliceblue;
+  font-weight: 500;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  padding: 0px 30px;
+}

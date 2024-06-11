@@ -11,9 +11,9 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-  <link href="css/navbar.css" rel="stylesheet" />
-  <link href="css/general.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
+  <link href="styles/general.css" rel="stylesheet" />
+  <link href="styles/navbar.css" rel="stylesheet" />
+  <link href="styles/profile.css" rel="stylesheet" />
 
 </head>
 
