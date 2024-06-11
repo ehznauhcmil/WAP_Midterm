@@ -2,32 +2,118 @@
 <html>
 
 <head>
-  <title>Signup</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/signup.css">
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 </head>
 
 <body>
-  <h2>Signup</h2>
-  <form method="POST" action="signup_handler.php" enctype="multipart/form-data">
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name" required><br><br>
+  <div class="card" id="signup-block">
 
-    <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name" required><br><br>
+    <div class="image">
+      <img src="images/logo.png" alt="">
+    </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <div class="form-and-buttons">
+      <form method="POST" action="signup_handler.php" enctype="multipart/form-data">
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
+        <div class="form">
 
-    <label for="profile_picture">Profile Picture:</label>
-    <input type="file" id="profile_picture" name="profile_picture"><br><br>
+          <div class="label">
+            <label for="first_name">First Name:</label>
+          </div>
 
-    <label for="phone">Phone Number:</label>
-    <input type="text"" id=" phone" name="phone"><br><br>
+          <div class="form-input">
+            <input type="text" id="first_name" name="first_name" required><br><br>
+          </div>
 
-    <button type="submit">Signup</button>
-  </form>
+          <div class="label">
+            <label for="last_name">Last Name:</label>
+          </div>
+
+          <div class="form-input">
+            <input type="text" id="last_name" name="last_name" required><br><br>
+          </div>
+
+          <div class="label">
+            <label for="email">Email:</label>
+          </div>
+
+          <div class="form-input">
+            <input type="email" id="email" name="email" required><br><br>
+          </div>
+
+          <div class="label">
+            <label for="password">Password:</label>
+          </div>
+
+          <div class="form-input">
+            <input type="password" id="password" name="password" required><br><br>
+          </div>
+
+          <div class="label">
+            <label for="profile_picture">Profile Picture:</label>
+          </div>
+
+          <div class="label">
+            <input type="file" id="profile_picture" name="profile_picture"><br><br>
+          </div>
+
+          <div class="label">
+            <label for="phone">Phone Number:</label>
+          </div>
+
+          <div class="form-input">
+            <input type="text" id="phone" name="phone" required><br><br>
+          </div>
+        </div>
+
+        <div class="button-grid">
+
+          <div class="button-container" id="button-left">
+            <a href="index.php"> <button type="button" id="signup-button">Back to Log In</button>
+            </a><br /><br />
+          </div>
+
+          <div class="button-container" id="button-right">
+            <button type="submit">Signup</button>
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </form>
+
+    </div>
+
+  </div>
+
 </body>
 
 </html>

@@ -6,7 +6,9 @@ body {
 }
 
 .card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   flex-direction: column;
   height: auto;
   width: auto;
@@ -19,10 +21,8 @@ body {
   padding: 15px;
 }
 
-#login-block {
+#signup-block {
   position: center;
-
-  display: flex;
   width: 1440px;
   height: 780px;
   align-items: center;
@@ -30,14 +30,65 @@ body {
   padding: 30px 30px;
 }
 
-h1 {
-  font-size: 70px;
-  font-weight: 700;
-  text-align: center;
-  color: aliceblue;
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-and-buttons {
+  grid-template-rows: 6fr 1fr;
+}
+.form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 30px;
+  /* justify-items: left; */
+}
+
+.label {
+  display: flex;
+  justify-content: right;
+}
+
+#first_name {
+  width: 330px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#last_name {
+  width: 330px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
 }
 
 #email {
+  width: 450px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#password {
+  width: 450px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#phone {
   width: 330px;
   background: none;
   border: none;
@@ -46,30 +97,20 @@ h1 {
   font-weight: 700;
 }
 
-#email::placeholder {
-  color: aliceblue;
-}
-
-#password {
-  width: 330px;
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 25px;
-  font-weight: 600;
-}
-
-#password::placeholder {
-  color: aliceblue;
-}
-
 .form-input {
+  display: flex;
+  align-items: center;
   border: solid 5px transparent;
   border-radius: 5px;
   background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
     linear-gradient(45deg, #da2f46, #03203a) border-box;
   background-clip: padding-box, border-box;
   background-origin: border-box;
+}
+
+.form-input:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(195, 194, 194, 0.2);
 }
 
 .padding {
@@ -87,8 +128,8 @@ input[type="password"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  justify-items: center;
   column-gap: 30px;
+  padding: 30px 30px;
 }
 
 .button-container {
@@ -101,8 +142,6 @@ input[type="password"] {
     linear-gradient(45deg, #da2f46, #03203a) border-box;
   background-clip: padding-box, border-box;
   background-origin: border-box;
-  align-items: center;
-  justify-content: center;
   transition: transform 0.4s ease-in-out;
 }
 
@@ -127,3 +166,16 @@ button {
   height: 38px;
 }
 
+label {
+  color: aliceblue;
+  font-weight: 800;
+  font-size: 30px;
+  justify-content: right;
+}
+
+#button-left {
+  justify-self: right;
+}
+#button-right {
+  justify-self: left;
+}

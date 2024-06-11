@@ -64,36 +64,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
   <div class="card" id="login-block">
+
+    <img src="images/logo.png" alt="" height="300px">
+
     <form action="index.php" method="POST">
-      <h1>LOGIN</h1>
+      <h1>GamerHub</h1>
+
       <div class="login-form">
         <?php echo "<h2>" . $errorMessage . "</h2>" ?>
+
         <div class="form-input">
-          <input type="email" id="email" placeholder="E-mail" name="email" required autocomplete="off"><br />
+          <input type="email" id="email" placeholder="E-mail" name="email" autocomplete="off"><br />
         </div>
 
         <div class="padding"></div>
 
         <div class="form-input">
-          <input type="password" id="password" name="password" placeholder="Password" required autocomplete="off"><br />
+          <input type="password" id="password" name="password" placeholder="Password" autocomplete="off"><br />
         </div>
 
         <div class="padding"></div>
 
         <div class="button-grid">
-          <div class="login">
-            <button id="login-button">Login</button><br /><br />
+
+          <div class="button-container">
+            <button type="submit" id="login-button">Login</button><br /><br />
           </div>
 
-          <div class="signup">
-            <a href="signup.php">
-              <button type="button">Sign Up</button>
+          <div class="button-container">
+            <a href="signup.php"> <button type="button" id="signup-button">Sign Up</button>
             </a><br /><br />
           </div>
+
         </div>
 
       </div>
     </form>
+
   </div>
 </body>
 
