@@ -1,0 +1,161 @@
+.main {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+
+.container-profile {
+  margin: 0 auto;
+  display: grid;
+  padding: 30px 30px;
+  width: 1440px;
+  height: 480px;
+  grid-template-rows: 2fr 1fr;
+  grid-template-columns: auto;
+  row-gap: 30px;
+  place-items: center;
+  padding: 30px 0px;
+}
+
+.card {
+  margin: 0 auto;
+  height: auto;
+  width: auto;
+  border: solid 10px transparent;
+  border-radius: 10px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  padding-top: 30px;
+  width: 900px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  object-fit: fill;
+}
+
+.details {
+  color: aliceblue;
+  justify-content: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  place-items: center;
+  column-gap: 25px;
+}
+
+.button-container {
+  display: flex;
+  height: auto;
+  width: 200px;
+  border: solid 5px transparent;
+  border-radius: 5px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  transition: transform 0.4s ease-in-out;
+}
+
+.button-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(195, 194, 194, 0.2);
+}
+
+.button-container:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  color: aliceblue;
+  font-weight: 800;
+  width: 200px;
+  height: 38px;
+}
+
+.friends {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  place-items: center;
+  justify-content: center;
+}
+h1 {
+  color: aliceblue;
+  height: 35px;
+  padding: none;
+  align-items: center;
+  place-items: center;
+}
+
+.table {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+
+.forms {
+  margin: 0 auto;
+  width: 1440px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, 780px);
+  place-self: center;
+}
+
+table,
+td,
+th {
+  border: 1px solid rgba(41, 41, 41, 0.79);
+  text-align: center;
+  background-color: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 2%;
+  border: solid 5px transparent; /* Transparent outer border */
+  border-radius: 5px; /* Rounded corners */
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    /* Background color inside the border */
+      linear-gradient(45deg, #da2f46, #03203a) border-box; /* Gradient on the border */
+  background-clip: padding-box, border-box; /* Clip each background to its respective area */
+  background-origin: padding-box, border-box; /* Start the gradient from the border */
+}
+
+td,
+th {
+  padding: 15px;
+  border: 1px solid rgba(94, 94, 94, 0.79); /* Add back cell borders */
+  background-color: transparent;
+}
+th {
+  color: white;
+  font-weight: 700;
+}
+td {
+  color: aliceblue;
+  font-weight: 700;
+}

@@ -23,35 +23,38 @@ include ('connection.php');
 ?>
 
 
+
 <body>
-  <div class="navbar">
-    <div class="logo">
-      <a href="#home"><img src="images/logo.png" alt="Logo" /></a>
-      <span>MyWebsite</span>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="#home"><img src="images/logo.png" alt="Logo" /></a>
+        <span>MyWebsite</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="homepage.php">STORE</a>
+        <a href="">LIBRARY</a>
+        <a href="profile.php">PROFILE</a>
+        <a href="logout.php">SIGN OUT</a>
+      </div>
+      <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
 
-    <div class="nav-links">
-      <a href="homepage.php">STORE</a>
-      <a href="">LIBRARY</a>
-      <a href="profile.php">PROFILE</a>
-      <a href="logout.php">SIGN OUT</a>
-    </div>
-    <div class="burger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
+  </header>
 
+  <div class="container-profile">
 
-  <div class="container-main">
-
-    <div class="container-profile-picture">
+    <div class="card" id="profile">
 
       <div class="profile-picture">
         <?php
-        $userId = $_SESSION['id']; // Get the currently logged-in user's ID
-        // Fetch user's profile picture filename from database
+        $userId = $_SESSION['id'];
         $stmt = $connect->prepare("SELECT profile_picture FROM users WHERE id = ?");
         $stmt->bind_param("i", $userId);
         $stmt->execute();
@@ -63,114 +66,133 @@ include ('connection.php');
         <img src="profile_pictures/<?php echo $profilePicture; ?>" alt="Profile Picture" width="100">
       </div>
 
-      <div class="button">
-        <button id="update-picture-button">Change Profile Picture</button>
-      </div>
-
-      <div class="container" id="update-picture" style="display: none;">
-
-        <h2>Change Profile Picture</h2>
-        <form method="POST" action="profile_picture_update.php" enctype="multipart/form-data">
-          <label for="profile_picture">Profile Picture:</label>
-          <input type="file" id="profile_picture" name="profile_picture"><br><br>
-          <button type="submit">Save</button>
-        </form>
-      </div>
-
-    </div>
-
-
-    <div class="container-profile">
-      <div class="profile">
+      <div class="details">
         <?php
         $email = $_SESSION['email'];
         $profile_query = "SELECT * FROM users WHERE email = '$email'";
         $result = mysqli_query($connect, $profile_query);
         $row = mysqli_fetch_assoc($result);
 
-        echo "<h2>" . $row['first_name'] . " " . $row['last_name'] . "</h2>";
-        echo "<h2>" . $row['email'] . "</h2>";
-        echo "<h2>" . $row['phone'] . "</h2>";
+        echo "<h2 style='font-size: 30px;'>" . $row['first_name'] . " " . $row['last_name'] . "</h2>";
+        echo "<h2 style='font-size: 30px;'>" . $row['email'] . "</h2>";
+        echo "<h2 style='font-size: 30px;'>" . $row['phone'] . "</h2>";
         ?>
       </div>
-      <div class="button">
+
+    </div>
+
+    <div class="buttons">
+
+      <div class="button-container">
+        <button id="update-picture-button">Change Profile Picture</button>
+      </div>
+
+      <div class="button-container">
         <button id="edit-profile-button">Edit Profile</button>
       </div>
 
-      <div class="container" id="edit-profile" style="display:none;">
-        <form action="profile_edit.php" method="POST" id="update-form">
-          <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-
-          <label for="profile_picture">Change Profile Picture:</label>
-          <input type="file" name="profile_picture" id="profile_picture" value="<?php echo $profilePicture; ?>"><br><br>
-
-          <label for="first_name">First Name:</label>
-          <input type="text" name="first_name" id="first_name" value="<?php echo $row['first_name']; ?>"><br><br>
-
-          <label for="last_name">Last Name:</label>
-          <input type="text" name="last_name" id="last_name" value="<?php echo $row['last_name']; ?>"><br><br>
-
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" value="<?php echo $row['email']; ?>"><br><br>
-
-          <label for="phone">Phone Number:</label>
-          <input type="tel" name="phone" id="phone" value="<?php echo $row['phone']; ?>"><br><br>
-
-          <input type="submit" value="Update Profile">
-        </form>
+      <div class="button-container">
+        <button id="add-friend-button">Add Friend</button>
       </div>
+
+      <div class="button-container">
+        <button id="remove-friend-button">Remove Friend</button>
+      </div>
+
     </div>
 
-    <div class="container-friends">
-      <div class="table">
-        <?php
-        include 'connection.php';
+  </div>
 
-        $userId = $_SESSION['id'];
+  <div class="friends">
+    <div>
+      <h1>Your Friends</h1>
+    </div>
+    <div class="table">
 
-        // Query to get friends and their details
-        $friend_query = "SELECT id, first_name, last_name, email, phone
+      <?php
+      include 'connection.php';
+
+      $userId = $_SESSION['id'];
+
+      // Query to get friends and their details
+      $friend_query = "SELECT id, first_name, last_name, email, phone
         FROM friends
         JOIN users ON IF(friends.id_1 = ?, friends.id_2, friends.id_1) = id
         WHERE ? IN (friends.id_1, friends.id_2)"; // Modified JOIN condition to get details
-        
-        $stmt = $connect->prepare($friend_query);
-        $stmt->bind_param("ii", $userId, $userId);
-        $stmt->execute();
-        $result = $stmt->get_result();
+      
+      $stmt = $connect->prepare($friend_query);
+      $stmt->bind_param("ii", $userId, $userId);
+      $stmt->execute();
+      $result = $stmt->get_result();
 
-        // Display friends list
-        if ($result->num_rows > 0) {
-          echo "<h3>Friends of User ID $userId:</h3>";
-          echo "<table> // Using a table for better presentation
+      if ($result->num_rows > 0) {
+        echo "<table>
         <tr>
-      <th>User ID<th>
+      <th>User ID</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
       <th>Phone Number</th>
       </tr>";
-          while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["id"] . "</td>";
-            echo "<td>" . $row["first_name"] . "</td>";
-            echo "<td>" . $row["last_name"] . "</td>";
-            echo "<td>" . $row["email"] . "</td>";
-            echo "<td>" . $row["phone"] . "</td>";
-            echo "</tr>";
-          }
-          echo "</table>";
-        } else {
-          echo "No friends found for this user.";
-        }
+      } else {
+        echo "No friends found for this user.";
+      }
+      ?>
+
+      <?php
+      while ($row = $result->fetch_assoc()):
         ?>
-      </div>
+
+        <tr>
+          <td><?php echo $row["id"] ?></td>
+          <td><?php echo $row["first_name"] ?></td>
+          <td><?php echo $row["last_name"] ?></td>
+          <td><?php echo $row["email"] ?></td>
+          <td><?php echo $row["phone"] ?></td>
+        </tr>
+      <?php endwhile; ?>
+      </table>
     </div>
 
-    <div class="container-friend-edit">
-      <button id="add-friend-button">Add Friend</button>
-      <button id="remove-friend-button">Remove Friend</button>
+
+  </div>
+
+
+  <div class="forms">
+
+    <div class="container" id="update-picture" style="display: none;">
+      <h2>Change Profile Picture</h2>
+      <form method="POST" action="profile_picture_update.php" enctype="multipart/form-data">
+        <label for="profile_picture">Profile Picture:</label>
+        <input type="file" id="profile_picture" name="profile_picture"><br><br>
+        <button type="submit">Save</button>
+      </form>
     </div>
+
+    <div class="container" id="edit-profile" style="display:none;">
+      <form action="profile_edit.php" method="POST" id="update-form">
+        <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+
+        <label for="profile_picture">Change Profile Picture:</label>
+        <input type="file" name="profile_picture" id="profile_picture" value="<?php echo $profilePicture; ?>"><br><br>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name" value="<?php echo $row['first_name']; ?>"><br><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" value="<?php echo $row['last_name']; ?>"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="<?php echo $row['email']; ?>"><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" name="phone" id="phone" value="<?php echo $row['phone']; ?>"><br><br>
+
+        <input type="submit" value="Update Profile">
+      </form>
+    </div>
+
+
 
     <div class="container" id="remove-friend" style="display:none;">
       <form method="POST" action="friend_remove.php">
@@ -208,7 +230,7 @@ include ('connection.php');
           echo "
       <table>
       <tr>
-      <th>User ID<th>
+      <th>User ID</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
@@ -242,11 +264,20 @@ include ('connection.php');
         </form>
       </div>
     </div>
+
   </div>
+
   <footer>
     <script src="js/profile_controller.js"></script>
   </footer>
-</body>
+
+
+  <!-- <div class="profile-picture">
+
+  
+  </div>
+  
+</body> -->
 
 
 
