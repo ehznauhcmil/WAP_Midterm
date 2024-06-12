@@ -44,7 +44,7 @@ include ('connection.php');
   </div>
 
 
-  <div="container-main">
+  <div class="container-main">
 
     <div class="container-profile-picture">
 
@@ -242,10 +242,10 @@ include ('connection.php');
         </form>
       </div>
     </div>
-    </div>
-    <footer>
-      <script src="profile_controller.js"></script>
-    </footer>
+  </div>
+  <footer>
+    <script src="js/profile_controller.js"></script>
+  </footer>
 </body>
 
 

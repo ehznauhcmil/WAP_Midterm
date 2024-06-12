@@ -88,6 +88,36 @@ body {
   font-weight: 400;
 }
 
+.file {
+  display: flex;
+  align-items: center;
+}
+
+#file-upload {
+  display: none;
+}
+
+.custom-file-upload {
+  align-self: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#profile-picture {
+  justify-content: center;
+  height: 35px;
+  width: 125px;
+}
+#fileNamePreview {
+  height: 35px;
+  width: auto;
+  align-self: center;
+  margin-top: 10px; /* Add some spacing */
+  font-size: 20px;
+  color: aliceblue;
+  padding: 0px 10px;
+}
+
 #phone {
   width: 330px;
   background: none;
@@ -95,6 +125,17 @@ body {
   outline: none;
   font-size: 25px;
   font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  color: aliceblue;
+  font-weight: 600;
+}
+
+input[type="file"] {
+  background: none;
 }
 
 .form-input {
@@ -107,21 +148,9 @@ body {
   background-clip: padding-box, border-box;
   background-origin: border-box;
 }
-
 .form-input:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 8px rgba(195, 194, 194, 0.2);
-}
-
-.padding {
-  height: 15px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  color: aliceblue;
-  font-weight: 600;
 }
 
 .button-grid {

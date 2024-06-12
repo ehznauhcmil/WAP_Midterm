@@ -127,3 +127,7 @@ button {
   height: 38px;
 }
 
+h2 {
+  font-weight: 600;
+  color: aliceblue;
+}

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/signup.css">
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -59,8 +60,14 @@
             <label for="profile_picture">Profile Picture:</label>
           </div>
 
-          <div class="label">
-            <input type="file" id="profile_picture" name="profile_picture"><br><br>
+          <div class="file">
+            <div class="form-input" id="profile-picture">
+              <label for="file-upload" class="custom-file-upload">
+                Choose File
+              </label>
+              <input type="file" id="file-upload" />
+            </div>
+            <div id="fileNamePreview">No file selected</div>
           </div>
 
           <div class="label">
@@ -85,34 +92,15 @@
 
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </form>
 
     </div>
 
   </div>
+
+  <footer>
+    <script src="js/file_upload.js"></script>
+  </footer>
 
 </body>
 
