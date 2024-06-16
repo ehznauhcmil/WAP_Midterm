@@ -62,12 +62,10 @@
 
           <div class="file">
             <div class="form-input" id="profile-picture">
-              <label for="file-upload" class="custom-file-upload">
-                Choose File
-              </label>
-              <input type="file" id="file-upload" />
+              <label for="file-upload" class="custom-file-upload">Choose File</label>
+              <input type="file" id="file-upload" name="file-upload" />
             </div>
-            <div id="fileNamePreview">No file selected</div>
+            <div id="fileNamePreview">No file chosen.</div>
           </div>
 
           <div class="label">
@@ -87,7 +85,7 @@
           </div>
 
           <div class="button-container" id="button-right">
-            <button type="submit">Signup</button>
+            <button type="submit">Sign Up</button>
           </div>
 
         </div>

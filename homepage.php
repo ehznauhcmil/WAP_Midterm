@@ -55,8 +55,6 @@
 
       </div>
 
-
-
     </div>
 
     <div class="v-card-list-3">

@@ -14,19 +14,19 @@
   grid-template-columns: auto;
   row-gap: 30px;
   place-items: center;
-  padding: 30px 0px;
 }
 
 .card {
   margin: 0 auto;
   height: auto;
   width: auto;
-  border: solid 10px transparent;
-  border-radius: 10px;
+  border: solid 5px transparent;
+  border-radius: 5px;
   background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
     linear-gradient(45deg, #da2f46, #03203a) border-box;
   background-clip: padding-box, border-box;
   background-origin: border-box;
+  padding: 0px 30px;
 }
 
 #profile {
@@ -69,6 +69,7 @@
   background-clip: padding-box, border-box;
   background-origin: border-box;
   transition: transform 0.4s ease-in-out;
+  place-items: center;
 }
 
 .button-container:hover {
@@ -98,7 +99,9 @@ button {
   width: 900px;
   place-items: center;
   justify-content: center;
+  padding: 30px;
 }
+
 h1 {
   color: aliceblue;
   height: 35px;
@@ -113,15 +116,6 @@ h1 {
   display: flex;
   justify-content: center;
   place-items: center;
-}
-
-.forms {
-  margin: 0 auto;
-  width: 1440px;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: repeat(4, 780px);
-  place-self: center;
 }
 
 table,
@@ -158,4 +152,85 @@ th {
 td {
   color: aliceblue;
   font-weight: 700;
+}
+
+.container {
+  border: solid 5px transparent;
+  border-radius: 5px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+
+.file-upload-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+#file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 900px;
+  justify-content: center;
+  padding: 30px 0px;
+}
+
+.form-input {
+  display: flex;
+  align-items: center;
+  border: solid 5px transparent;
+  border-radius: 5px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+.form-input:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(195, 194, 194, 0.2);
+}
+
+#file-upload {
+  display: none;
+}
+
+.custom-file-upload {
+  align-self: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#picture {
+  justify-content: center;
+  height: 35px;
+  width: 125px;
+}
+
+#profile_picture {
+  display: none;
+}
+
+#fileNamePreview {
+  height: 35px;
+  width: auto;
+  align-self: center;
+  margin-top: 10px; /* Add some spacing */
+  font-size: 20px;
+  color: aliceblue;
+  padding: 0px 10px;
+}
+
+label {
+  color: aliceblue;
+  font-weight: 800;
+  font-size: 30px;
+  justify-content: right;
+}
+
+.padding {
+  height: 30px;
 }

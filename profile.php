@@ -152,29 +152,45 @@ include ('connection.php');
         </tr>
       <?php endwhile; ?>
       </table>
+
     </div>
 
+  </div>
 
+  <div class="card" id="file">
+    <h1>Choose Profile Picture</h1>
+    <form method="POST" action="profile_picture_update.php" enctype="multipart/form-data">
+
+      <div class="file-upload-input">
+
+        <div class="form-input" id="picture">
+          <label for="profile_picture" class="custom-file-upload">
+            Choose File
+          </label>
+          <input type="file" id="profile_picture" name="profile-picture" />
+        </div>
+
+        <div id="fileNamePreview">No file selected</div>
+
+      </div>
+
+      <div class="padding"></div>
+
+      <div class="button-container">
+        <button type="submit">Submit</button>
+      </div>
+
+    </form>
   </div>
 
 
   <div class="forms">
 
-    <div class="container" id="update-picture" style="display: none;">
-      <h2>Change Profile Picture</h2>
-      <form method="POST" action="profile_picture_update.php" enctype="multipart/form-data">
-        <label for="profile_picture">Profile Picture:</label>
-        <input type="file" id="profile_picture" name="profile_picture"><br><br>
-        <button type="submit">Save</button>
-      </form>
-    </div>
+
 
     <div class="container" id="edit-profile" style="display:none;">
       <form action="profile_edit.php" method="POST" id="update-form">
         <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-
-        <label for="profile_picture">Change Profile Picture:</label>
-        <input type="file" name="profile_picture" id="profile_picture" value="<?php echo $profilePicture; ?>"><br><br>
 
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name" id="first_name" value="<?php echo $row['first_name']; ?>"><br><br>
@@ -267,8 +283,42 @@ include ('connection.php');
 
   </div>
 
+  <div class="padding">
+
+  </div>
   <footer>
+    <div class="container">
+      <div class="logo">
+        <a href="#"><img src="images/logo.png" alt="Your Company Logo"></a>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Support</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="social-media">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-discord"></i></a>
+    </div>
+    </div>
+
+    <div class="copyright">
+      <p>Copyright © 2024 Your Company Name. All rights reserved.</p>
+    </div>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      }
+    </script>
     <script src="js/profile_controller.js"></script>
+    <script src="js/file_upload.js"></script>
   </footer>
 
 

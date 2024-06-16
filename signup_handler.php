@@ -9,18 +9,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $phone = $_POST['phone'];
 
+    $fileName = 'default.jpg';
 
-    // Handle profile picture upload
-    $fileName = 'default.jpg'; // Set  default picture
+    if (isset($_FILES['file-upload']) && $_FILES['file-upload']['error'] === UPLOAD_ERR_OK) {
 
-    if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
-
-        $fileName = $_FILES['profile_picture']['name'];
-        $fileTmpPath = $_FILES['profile_picture']['tmp_name'];
+        $fileName = $_FILES['file-upload']['name'];
+        $fileTmpPath = $_FILES['file-upload']['tmp_name'];
 
         $uploadDir = 'profile_pictures/';
 
-        move_uploaded_file($fileTmpPath, $uploadDir . $fileName);
+        if (move_uploaded_file($_FILES['file-upload']['tmp_name'], $uploadDir . $fileName)) {
+            // File uploaded successfully
+        } else {
+            echo "Failed to move uploaded file.";
+        }
     }
     // Insert user data into database
     $stmt = $connect->prepare("INSERT INTO users (first_name, last_name, email, password, profile_picture, phone) VALUES (?, ?, ?, ?, ?, ?)");
