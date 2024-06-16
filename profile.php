@@ -31,7 +31,7 @@ include ('connection.php');
 
       <div class="logo">
         <a href="#home"><img src="images/logo.png" alt="Logo" /></a>
-        <span>MyWebsite</span>
+        <span>GamerHub</span>
       </div>
 
       <div class="nav-links">
@@ -122,7 +122,7 @@ include ('connection.php');
         $friend_query = "SELECT id, first_name, last_name, email, phone
         FROM friends
         JOIN users ON IF(friends.id_1 = ?, friends.id_2, friends.id_1) = id
-        WHERE ? IN (friends.id_1, friends.id_2)"; // Modified JOIN condition to get details
+        WHERE ? IN (friends.id_1, friends.id_2)";
         
         $stmt = $connect->prepare($friend_query);
         $stmt->bind_param("ii", $userId, $userId);
@@ -383,9 +383,7 @@ include ('connection.php');
 
   <footer>
     <div class="container">
-      <div class="logo">
-        <a href="#"><img src="images/logo.png" alt="Your Company Logo"></a>
-      </div>
+
 
       <nav class="footer-nav">
         <a href="#">About Us</a>
@@ -403,19 +401,21 @@ include ('connection.php');
     </div>
     </div>
 
-</body>
 
-<div class="copyright">
-  <p>Copyright © 2024 GamerHub. All rights reserved.</p>
-</div>
-<script>
-  function toggleMenu() {
-    var navLinks = document.querySelector(".nav-links");
-    navLinks.classList.toggle("active");
-  }
-</script>
-<script src="js/profile_controller.js"></script>
-<script src="js/file_upload.js"></script>
-</footer>
+
+    <div class="copyright">
+      <p>Copyright © 2024 GamerHub. All rights reserved.</p>
+    </div>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      }
+    </script>
+    <script src="js/profile_controller.js"></script>
+    <script src="js/file_upload.js"></script>
+  </footer>
+
+</body>
 
 </html>

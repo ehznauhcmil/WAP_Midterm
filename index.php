@@ -35,11 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
       } else {
         $errorMessage = "Incorrect Email or Password";
-        // echo nl2br("\nIncorrect Email or Password");
       }
     } else {
       $errorMessage = "Incorrect Email and Password";
-      // echo nl2br("<h3>\nIncorrect Email and Password</h3>");
     }
   }
 
@@ -71,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <h1>GamerHub</h1>
 
       <div class="login-form">
-        <?php echo "<h2>" . $errorMessage . "</h2>" ?>
+        <?php echo "<h2 style='color: aliceblue;'>" . $errorMessage . "</h2>" ?>
 
         <div class="form-input">
           <input type="email" id="email" placeholder="E-mail" name="email" autocomplete="off"><br />

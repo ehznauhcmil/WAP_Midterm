@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log In</title>
+  <title>Sign Up</title>
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/signup.css">
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
@@ -20,6 +20,7 @@
     </div>
 
     <div class="form-and-buttons">
+      
       <form method="POST" action="signup_handler.php" enctype="multipart/form-data">
 
         <div class="form">
