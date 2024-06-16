@@ -156,12 +156,12 @@ td {
 }
 
 .container {
-  border: solid 5px transparent;
-  border-radius: 5px;
-  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
-    linear-gradient(45deg, #da2f46, #03203a) border-box;
-  background-clip: padding-box, border-box;
-  background-origin: border-box;
+  padding: 15px 0px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
 }
 
 .file-upload-input {
@@ -223,13 +223,142 @@ td {
   padding: 0px 10px;
 }
 
+#edit-profile {
+  padding: 30px 30px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 30px;
+}
+
+.label {
+  display: flex;
+  justify-content: right;
+}
+
+.form-input {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border: solid 5px transparent;
+  border-radius: 5px;
+  background: linear-gradient(#0a0b0a, #0a0b0a) padding-box,
+    linear-gradient(45deg, #da2f46, #03203a) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+.form-input:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(195, 194, 194, 0.2);
+}
+
+#first_name {
+  width: auto;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#last_name {
+  width: 330px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#email {
+  width: 450px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#password {
+  width: 450px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#phone {
+  width: 450px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  color: aliceblue;
+  font-weight: 600;
+}
+
 label {
+  width: auto;
   color: aliceblue;
   font-weight: 800;
   font-size: 30px;
   justify-content: right;
 }
 
+form {
+  padding: 30px 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+#remove-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#friend_id {
+  width: 450px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#add-users {
+  display: flex;
+  flex-direction: column;
+}
+
+#add-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: auto;
+}
+
 .padding {
   height: 30px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
 }

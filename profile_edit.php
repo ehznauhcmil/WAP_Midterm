@@ -1,10 +1,10 @@
 <?php
 require 'connection.php';
 
-function updateUserProfile($connect, $userId, $firstName, $lastName, $email, $profilePicture, $phone)
+function updateUserProfile($connect, $userId, $firstName, $lastName, $email, $password, $phone)
 {
-    $stmt = $connect->prepare("UPDATE users SET first_name = ?, last_name = ?, email = ?, profile_picture = ?, phone = ? WHERE id = ?");
-    $stmt->bind_param("sssssi", $firstName, $lastName, $email, $profilePicture, $phone, $userId);
+    $stmt = $connect->prepare("UPDATE users SET first_name = ?, last_name = ?, email = ?, password = ?, phone = ? WHERE id = ?");
+    $stmt->bind_param("sssssi", $firstName, $lastName, $email, $password, $phone, $userId);
     return $stmt->execute();
 }
 
@@ -14,11 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastName = $_POST['last_name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
+    $password = $_POST['password'];
+
     session_start();
     $userId = $_SESSION['id'];
 
     if (empty($errorMessage)) {
-        if (updateUserProfile($connect, $userId, $firstName, $lastName, $email, $profilePicture, $phone)) {
+        if (updateUserProfile($connect, $userId, $firstName, $lastName, $email, $password, $phone)) {
             header("Location: profile.php");
             exit();
         } else {

@@ -40,12 +40,12 @@ body {
 .form-and-buttons {
   grid-template-rows: 6fr 1fr;
 }
+
 .form {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: repeat(6, 1fr);
   gap: 30px;
-  /* justify-items: left; */
 }
 
 .label {
