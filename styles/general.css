@@ -24,6 +24,7 @@ body {
 
 .navbar {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   background-color: #161616;
@@ -93,6 +94,14 @@ body {
   margin: 5px;
 }
 
+.content{
+  width: 90%;
+  padding: 0px 30px;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
 footer {
   background-color: #222; /* Dark background */
   color: #fff; /* White text */
@@ -101,11 +110,11 @@ footer {
 }
 
 .container {
-  display: flex; /* Use flexbox for layout */
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Limit container width */
-  margin: 0 auto; /* Center the container */
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 

@@ -5,10 +5,10 @@ include_once 'connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userId = $_SESSION['id']; // Get logged-in user's ID
 
-    if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
+    if (isset($_FILES['file-upload']) && $_FILES['file-upload']['error'] === UPLOAD_ERR_OK) {
 
-        $fileName = $_FILES['profile_picture']['name'];
-        $fileTmpPath = $_FILES['profile_picture']['tmp_name'];
+        $fileName = $_FILES['file-upload']['name'];
+        $fileTmpPath = $_FILES['file-upload']['tmp_name'];
 
         $uploadDir = 'profile_pictures/';
 

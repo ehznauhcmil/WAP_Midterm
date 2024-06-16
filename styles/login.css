@@ -25,6 +25,7 @@ body {
 
   display: flex;
   width: 90%;
+  max-width: 1400px;
   height: 780px;
   align-items: center;
   justify-content: center;

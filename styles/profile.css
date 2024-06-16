@@ -7,8 +7,9 @@
 .container-profile {
   margin: 0 auto;
   display: grid;
+  width: 100%;
   padding: 30px 30px;
-  width: 1440px;
+  max-width: 1440px;
   height: 480px;
   grid-template-rows: 2fr 1fr;
   grid-template-columns: auto;
@@ -99,7 +100,7 @@ button {
   width: 900px;
   place-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 15px 0px;
 }
 
 h1 {
@@ -169,14 +170,12 @@ td {
   place-items: center;
 }
 
-#file {
+#change-profile-picture {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
   width: 900px;
   justify-content: center;
-  padding: 30px 0px;
 }
 
 .form-input {

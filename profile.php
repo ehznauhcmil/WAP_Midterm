@@ -28,6 +28,7 @@ include ('connection.php');
 
   <header>
     <div class="navbar">
+
       <div class="logo">
         <a href="#home"><img src="images/logo.png" alt="Logo" /></a>
         <span>MyWebsite</span>
@@ -39,14 +40,18 @@ include ('connection.php');
         <a href="profile.php">PROFILE</a>
         <a href="logout.php">SIGN OUT</a>
       </div>
+
       <div class="burger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
       </div>
+
     </div>
 
   </header>
+
+  <div class="content">
 
   <div class="container-profile">
 
@@ -110,7 +115,6 @@ include ('connection.php');
     <div class="table">
 
       <?php
-      include 'connection.php';
 
       $userId = $_SESSION['id'];
 
@@ -157,17 +161,18 @@ include ('connection.php');
 
   </div>
 
-  <div class="card" id="file">
+  <div class="change-picture-box">
+  <div class="card" id="change-profile-picture">
     <h1>Choose Profile Picture</h1>
     <form method="POST" action="profile_picture_update.php" enctype="multipart/form-data">
 
       <div class="file-upload-input">
 
         <div class="form-input" id="picture">
-          <label for="profile_picture" class="custom-file-upload">
+          <label for="file-upload" class="custom-file-upload">
             Choose File
           </label>
-          <input type="file" id="profile_picture" name="profile-picture" />
+          <input type="file" id="file-upload" name="file-upload" />
         </div>
 
         <div id="fileNamePreview">No file selected</div>
@@ -180,7 +185,10 @@ include ('connection.php');
         <button type="submit">Submit</button>
       </div>
 
-    </form>
+      <div class="padding"></div>
+
+  </form>
+  </div>
   </div>
 
 
@@ -188,7 +196,7 @@ include ('connection.php');
 
 
 
-    <div class="container" id="edit-profile" style="display:none;">
+    <div class="container" id="edit-profile">
       <form action="profile_edit.php" method="POST" id="update-form">
         <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
 
@@ -286,6 +294,9 @@ include ('connection.php');
   <div class="padding">
 
   </div>
+
+  </div>
+
   <footer>
     <div class="container">
       <div class="logo">
@@ -307,6 +318,8 @@ include ('connection.php');
       <a href="#"><i class="fab fa-discord"></i></a>
     </div>
     </div>
+      
+    </body>
 
     <div class="copyright">
       <p>Copyright © 2024 Your Company Name. All rights reserved.</p>
@@ -317,7 +330,7 @@ include ('connection.php');
         navLinks.classList.toggle("active");
       }
     </script>
-    <script src="js/profile_controller.js"></script>
+    <!-- <script src="js/profile_controller.js"></script> -->
     <script src="js/file_upload.js"></script>
   </footer>
 
@@ -327,7 +340,6 @@ include ('connection.php');
   
   </div>
   
-</body> -->
 
 
 

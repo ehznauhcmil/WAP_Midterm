@@ -44,6 +44,8 @@
 
   </div>
 
+  <div class="content">
+
   <div class="hero-section">
 
     <div class="main-card">
@@ -117,7 +119,7 @@
       <img src="images\zelda.jpg" alt="">
     </div>
   </div>
-
+</div>
 
 </body>
 
